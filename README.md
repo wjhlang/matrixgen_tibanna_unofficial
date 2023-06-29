@@ -1,2 +1,2 @@
-# strling-docker
-Automated Docker containerization for STRling
+# Multiomic Matrix Generating-docker
+Automated Docker containerization for
