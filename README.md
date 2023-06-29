@@ -1,1 +1,2 @@
-# matrixgen_tibanna_unofficial
+# strling-docker
+Automated Docker containerization for STRling
