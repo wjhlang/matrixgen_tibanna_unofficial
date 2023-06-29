@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /usr/local/bin
 
 # Copy your application code into the container
-COPY generate_matrix_all.sh
+COPY generate_matrix_all.sh .
 
 RUN chmod +x generate_matrix_all.sh
 
