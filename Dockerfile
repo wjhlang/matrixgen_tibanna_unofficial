@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
     git \
     build-essential \
     samtools \
-    parallel
+    parallel \
+    python/3.8 \
 
 # Install nim
 #RUN apt-get update && \
@@ -27,17 +28,16 @@ RUN apt-get update && apt-get install -y \
 #    cd ..
 
 # Change to your working directory
+
 WORKDIR /usr/local/bin
 
-RUN wget https://github.com/quinlan-lab/STRling/releases/download/v0.5.2/strling && \
-    chmod +x strling
-
 # Copy your application code into the container
-COPY run_strling.sh .
-RUN chmod +x run_strling.sh
+COPY generate_matrix_all.sh
+
+RUN chmod +x generate_matrix_all.sh
 
 # give me all the permissions
 RUN chmod -R 777 /var/lib/ 
 
 # Set the entrypoint command
-CMD ["run_strling.sh"]
+CMD ["generate_matrix_all.sh"]
